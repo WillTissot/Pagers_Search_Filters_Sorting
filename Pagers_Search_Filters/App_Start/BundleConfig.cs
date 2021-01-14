@@ -28,3 +28,4 @@ namespace Pagers_Search_Filters
         }
     }
 }
+        

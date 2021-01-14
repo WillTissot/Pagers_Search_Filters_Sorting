@@ -69,12 +69,19 @@ namespace Pagers_Search_Filters.Controllers
 
 
 
-            return View(fighters.ToList().ToPagedList(i ?? 1, 2));
+            return View(fighters.ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Fighters/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, string sortOrder, string searchstring, string abilityFilter, string nameFilter, int? i)
         {
+            ViewBag.CurrentSearchString = searchstring;
+            ViewBag.CurrentAbilityFilter = abilityFilter;
+            ViewBag.CurrentNameFilter = nameFilter;
+
+
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

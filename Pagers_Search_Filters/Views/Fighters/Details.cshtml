@@ -1,5 +1,6 @@
 ﻿@model Pagers_Search_Filters.Models.Fighter
-
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Details";
 }
@@ -30,5 +31,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "Fighters", new { searchstring = ViewBag.CurrentSearchString, nameFilter = ViewBag.CurrentNameFilter, abilityFilter = ViewBag.CurrentAbilityFilter  }, null)
 </p>
